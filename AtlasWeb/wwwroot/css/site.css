@@ -1,0 +1,271 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* ATLAS SOFT - Yukarý çýk butonu konumu */
+#backToTop,
+#scrollToTop,
+.back-to-top,
+.scroll-to-top {
+    bottom: 105px !important;
+    right: 25px !important;
+    z-index: 999 !important;
+}
+
+/* Yukarý çýk butonunu satýþ danýþmanýnýn üstüne taþý */
+#atlasBackToTop,
+.atlas-back-to-top {
+    position: fixed !important;
+    right: 25px !important;
+    bottom: 100px !important;
+    z-index: 1099 !important;
+}
+
+@media (max-width: 480px) {
+    #atlasBackToTop,
+    .atlas-back-to-top {
+        right: 15px !important;
+        bottom: 85px !important;
+    }
+}
+
+/* ATLAS SOFT - WhatsApp Butonu */
+
+.atlas-whatsapp {
+    position: fixed;
+    left: 22px;
+    bottom: 22px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
+    z-index: 1090;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+    .atlas-whatsapp:hover {
+        color: #ffffff;
+        transform: translateY(-4px) scale(1.06);
+        box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
+    }
+
+    .atlas-whatsapp svg {
+        display: block;
+    }
+
+@media (max-width: 480px) {
+    .atlas-whatsapp {
+        left: 15px;
+        bottom: 15px;
+        width: 54px;
+        height: 54px;
+    }
+}
+
+
+/* ATLAS SOFT - MOBIL UYUMLULUK */
+
+html, body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img, video, iframe {
+    max-width: 100%;
+}
+
+@media (max-width: 1199.98px) {
+
+    /* Mobil menü */
+    .atlas-navbar .navbar-collapse {
+        margin-top: 12px;
+        padding: 14px;
+        background: #f5f8fd;
+        border: 1px solid #e1eaf5;
+        border-radius: 14px;
+    }
+
+    .atlas-navbar .navbar-nav {
+        align-items: stretch;
+    }
+
+    .atlas-navbar .nav-link {
+        white-space: normal;
+        padding: 12px !important;
+        border-radius: 8px;
+    }
+
+        .atlas-navbar .nav-link:hover {
+            background: #e5efff;
+        }
+
+    .atlas-navbar .atlas-demo-button {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    /* Logo */
+    .atlas-brand {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .atlas-brand-sub {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    /* Ana içerik */
+    .atlas-main {
+        width: 100%;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    /* Ürün sayfalarý */
+    .atlas-wms-page .atlas-hero,
+    .atlas-ai-page .atlas-hero {
+        padding: 45px 18px;
+    }
+
+        .atlas-wms-page .atlas-hero h1,
+        .atlas-ai-page .atlas-hero h1 {
+            font-size: clamp(27px, 7vw, 38px);
+            line-height: 1.2;
+        }
+
+    /* Footer */
+    .atlas-footer-premium {
+        padding: 45px 0 25px;
+    }
+
+        .atlas-footer-premium .atlas-footer-main {
+            row-gap: 30px;
+        }
+
+        .atlas-footer-premium h4 {
+            margin-bottom: 14px;
+        }
+
+    .atlas-footer-bottom {
+        text-align: center;
+    }
+
+    /* Satýþ danýþmaný */
+    .atlas-chat {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .atlas-chat-toggle {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    .atlas-chat-panel {
+        width: min(380px, calc(100vw - 24px));
+        max-height: calc(100dvh - 95px);
+        overflow-y: auto;
+    }
+
+    /* WhatsApp */
+    .atlas-whatsapp {
+        left: 12px;
+        bottom: 12px;
+        width: 52px;
+        height: 52px;
+    }
+
+    /* Yukarý çýk butonu */
+    #atlasBackToTop,
+    .atlas-back-to-top {
+        right: 15px !important;
+        bottom: 85px !important;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .atlas-brand {
+        font-size: 21px;
+    }
+
+    .atlas-chat-toggle {
+        padding: 11px 12px;
+        font-size: 12px;
+    }
+
+    .atlas-chat-choices button {
+        font-size: 12px;
+        padding: 7px;
+    }
+
+    .atlas-chat-form {
+        padding: 8px;
+    }
+}
+
+/* ATLAS SOFT - MOBIL MENU YAZI RENKLERI */
+
+@media (max-width: 1199.98px) {
+
+    .atlas-navbar .navbar-collapse {
+        background: #f5f8fd !important;
+        border: 1px solid #dce7f5;
+        border-radius: 16px;
+        padding: 14px;
+    }
+
+        .atlas-navbar .navbar-collapse .nav-link {
+            color: #17365b !important;
+            font-weight: 700;
+            opacity: 1 !important;
+            text-shadow: none !important;
+            padding: 14px 12px !important;
+            border-radius: 9px;
+        }
+
+            .atlas-navbar .navbar-collapse .nav-link:hover,
+            .atlas-navbar .navbar-collapse .nav-link.active {
+                background: #dbeafe !important;
+                color: #1254a0 !important;
+            }
+
+        .atlas-navbar .navbar-collapse .atlas-demo-button {
+            background: #17549b !important;
+            color: #ffffff !important;
+            text-align: center;
+            display: block;
+            width: 100%;
+            margin-top: 14px;
+        }
+}

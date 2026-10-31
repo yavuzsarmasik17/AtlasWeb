@@ -1,0 +1,676 @@
+﻿@model AtlasWeb.Models.DemoTalepViewModel
+
+@{
+    ViewData["Title"] = "Demo Talep Et | ATLAS SOFT";
+}
+
+<div class="atlas-demo-v2">
+
+    <div class="atlas-demo-v2-shell">
+
+        <!-- SOL TANITIM ALANI -->
+        <div class="atlas-demo-v2-info">
+
+            <div class="atlas-demo-v2-badge">
+                <span class="atlas-demo-v2-dot"></span>
+                ATLAS SOFT • AKILLI YAZILIM ÇÖZÜMLERİ
+            </div>
+
+            <h1>
+                İşletmenizin
+                <span>geleceğini</span>
+                birlikte tasarlayalım.
+            </h1>
+
+            <p class="atlas-demo-v2-description">
+                İş süreçlerinizi dijitalleştirmek için
+                doğru yazılımı keşfedin. İhtiyaçlarınızı
+                bizimle paylaşın, size uygun çözümleri
+                birlikte değerlendirelim.
+            </p>
+
+            <div class="atlas-demo-v2-products">
+
+                <div class="atlas-demo-v2-product">
+                    <div class="atlas-demo-v2-product-icon">
+                        W
+                    </div>
+                    <div>
+                        <h3>ATLAS WMS</h3>
+                        <p>
+                            Antrepo, depo, stok, mal kabul,
+                            mal çıkış ve operasyon yönetimi.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="atlas-demo-v2-product">
+                    <div class="atlas-demo-v2-product-icon">
+                        AI
+                    </div>
+                    <div>
+                        <h3>ATLAS AI</h3>
+                        <p>
+                            Belge işleme ve iş süreçlerine
+                            yönelik yapay zekâ çözümleri.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="atlas-demo-v2-product">
+                    <div class="atlas-demo-v2-product-icon">
+                        B
+                    </div>
+                    <div>
+                        <h3>ATLAS Business</h3>
+                        <p>
+                            İşletmenizin farklı süreçlerini
+                            tek platformda yönetmeye
+                            yönelik çözümler.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="atlas-demo-v2-bottom">
+                <span>✓ İhtiyaç analizi</span>
+                <span>✓ Ürün tanıtımı</span>
+                <span>✓ Size özel değerlendirme</span>
+            </div>
+
+        </div>
+
+        <!-- SAĞ FORM ALANI -->
+        <div class="atlas-demo-v2-form-side">
+
+            <div class="atlas-demo-v2-form-card">
+
+                <div class="atlas-demo-v2-form-heading">
+                    <span>ATLAS SOFT İLE TANIŞIN</span>
+                    <h2>Demo Talep Edin</h2>
+                    <p>
+                        Formu doldurun, talebinizi
+                        değerlendirmek için sizinle
+                        iletişime geçelim.
+                    </p>
+                </div>
+
+                @if (TempData["DemoBasarili"] != null)
+                {
+                    <div class="alert alert-success"
+                         role="status">
+                        @TempData["DemoBasarili"]
+                    </div>
+                }
+
+                <form id="atlasDemoForm"
+                      asp-controller="Demo"
+                      asp-action="Index"
+                      method="post">
+
+                    @Html.AntiForgeryToken()
+
+                    <div asp-validation-summary="ModelOnly"
+                         class="text-danger mb-3"></div>
+
+                    <div class="atlas-demo-v2-grid">
+
+                        <div class="atlas-demo-v2-field">
+                            <label asp-for="AdSoyad">
+                                Ad Soyad
+                            </label>
+                            <input asp-for="AdSoyad"
+                                   class="form-control"
+                                   autocomplete="name"
+                                   placeholder="Adınız ve soyadınız" />
+                            <span asp-validation-for="AdSoyad"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="atlas-demo-v2-field">
+                            <label asp-for="Firma">
+                                Firma Adı
+                            </label>
+                            <input asp-for="Firma"
+                                   class="form-control"
+                                   autocomplete="organization"
+                                   placeholder="Firma adınız" />
+                            <span asp-validation-for="Firma"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="atlas-demo-v2-field">
+                            <label asp-for="Telefon">
+                                Telefon
+                            </label>
+                            <input asp-for="Telefon"
+                                   class="form-control"
+                                   autocomplete="tel"
+                                   placeholder="05XX XXX XX XX" />
+                            <span asp-validation-for="Telefon"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="atlas-demo-v2-field">
+                            <label asp-for="Email">
+                                E-posta
+                            </label>
+                            <input asp-for="Email"
+                                   type="email"
+                                   class="form-control"
+                                   autocomplete="email"
+                                   placeholder="ornek@firma.com" />
+                            <span asp-validation-for="Email"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="atlas-demo-v2-field atlas-demo-v2-full">
+                            <label asp-for="Urun">
+                                İlgilendiğiniz Yazılım
+                            </label>
+
+                            <select asp-for="Urun"
+                                    class="form-select">
+                                <option value="">
+                                    Yazılım seçiniz
+                                </option>
+                                <option value="ATLAS WMS">
+                                    ATLAS WMS
+                                </option>
+                                <option value="ATLAS AI">
+                                    ATLAS AI
+                                </option>
+                                <option value="ATLAS Business">
+                                    ATLAS Business
+                                </option>
+                            </select>
+
+                            <span asp-validation-for="Urun"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="atlas-demo-v2-field atlas-demo-v2-full">
+                            <label asp-for="Mesaj">
+                                İşletmenizin İhtiyaçları
+                            </label>
+
+                            <textarea asp-for="Mesaj"
+                                      class="form-control"
+                                      rows="4"
+                                      placeholder="Depo sayınız, kullanıcı sayınız veya ihtiyaç duyduğunuz özellikleri kısaca anlatabilirsiniz."></textarea>
+
+                            <span asp-validation-for="Mesaj"
+                                  class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <!-- SPAM KORUMASI -->
+                    <div class="atlas-demo-honeypot"
+                         aria-hidden="true">
+                        <label asp-for="Website">Website</label>
+                        <input asp-for="Website"
+                               tabindex="-1"
+                               autocomplete="off" />
+                    </div>
+
+                    <div class="atlas-demo-v2-consent">
+
+                        <div class="form-check">
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   id="kvkkOkundu"
+                                   required />
+
+                            <label class="form-check-label"
+                                   for="kvkkOkundu">
+
+                                <a asp-controller="Kurumsal"
+                                   asp-action="Kvkk"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    KVKK Aydınlatma Metni
+                                </a>
+                                hakkında bilgi edindim.
+
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <p class="atlas-demo-v2-privacy">
+                        Bilgileriniz demo talebiniz hakkında
+                        sizinle iletişim kurulması amacıyla
+                        kullanılacaktır.
+                    </p>
+
+                    <button type="submit"
+                            class="atlas-demo-v2-submit">
+                        Demo Talebi Gönder
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                    <div class="atlas-demo-v2-secure">
+                        Talebiniz doğrudan ATLAS SOFT ekibine iletilir.
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    .atlas-demo-v2 {
+        padding: 55px 0 70px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .atlas-demo-v2-shell {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+        background: #071c39;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 65px rgba(7,28,57,.15);
+    }
+
+    .atlas-demo-v2-info {
+        padding: 65px 48px;
+        color: #fff;
+        background: radial-gradient(circle at 15% 10%, rgba(38,133,237,.23), transparent 45%), linear-gradient(145deg, #071c39, #0d3059);
+    }
+
+    .atlas-demo-v2-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 14px;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #c6e3ff;
+    }
+
+    .atlas-demo-v2-dot {
+        width: 8px;
+        height: 8px;
+        background: #4ba3ff;
+        border-radius: 50%;
+        box-shadow: 0 0 12px #4ba3ff;
+    }
+
+    .atlas-demo-v2-info h1 {
+        color: #fff;
+        font-size: clamp(31px, 3.2vw, 47px);
+        line-height: 1.16;
+        letter-spacing: -1.2px;
+        font-weight: 800;
+        margin: 32px 0 22px;
+    }
+
+        .atlas-demo-v2-info h1 span {
+            color: #61b1ff;
+        }
+
+    .atlas-demo-v2-description {
+        color: #c3d6eb;
+        line-height: 1.85;
+        font-size: 15px;
+        margin-bottom: 38px;
+    }
+
+    .atlas-demo-v2-products {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .atlas-demo-v2-product {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 14px;
+        background: rgba(255,255,255,.045);
+        transition: background .2s, transform .2s;
+    }
+
+        .atlas-demo-v2-product:hover {
+            background: rgba(255,255,255,.09);
+            transform: translateY(-2px);
+        }
+
+    .atlas-demo-v2-product-icon {
+        flex-shrink: 0;
+        width: 43px;
+        height: 43px;
+        border-radius: 12px;
+        background: linear-gradient(135deg,#1767c2,#2685ed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: 800;
+        color: white;
+    }
+
+    .atlas-demo-v2-product h3 {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 750;
+        margin: 0 0 6px;
+    }
+
+    .atlas-demo-v2-product p {
+        color: #c3d6eb;
+        font-size: 13px;
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    .atlas-demo-v2-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+        margin-top: 35px;
+        color: #c6e3ff;
+        font-size: 12px;
+    }
+
+    .atlas-demo-v2-form-side {
+        padding: 38px;
+        background: #f2f6fc;
+        display: flex;
+        align-items: center;
+    }
+
+    .atlas-demo-v2-form-card {
+        width: 100%;
+        background: #fff;
+        padding: 36px;
+        border-radius: 18px;
+        box-shadow: 0 12px 35px rgba(7,28,57,.07);
+        border: 1px solid #e5edf7;
+    }
+
+    .atlas-demo-v2-form-heading > span {
+        color: #1768c1;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        font-weight: 800;
+    }
+
+    .atlas-demo-v2-form-heading h2 {
+        color: #071c39;
+        font-size: 29px;
+        font-weight: 800;
+        margin: 12px 0;
+    }
+
+    .atlas-demo-v2-form-heading p {
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 27px;
+    }
+
+    .atlas-demo-v2-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 19px 16px;
+    }
+
+    .atlas-demo-v2-full {
+        grid-column: 1 / -1;
+    }
+
+    .atlas-demo-v2-field label {
+        display: block;
+        font-size: 13px;
+        color: #334155;
+        font-weight: 650;
+        margin-bottom: 8px;
+    }
+
+    .atlas-demo-v2-field .form-control,
+    .atlas-demo-v2-field .form-select {
+        min-height: 47px;
+        border: 1px solid #d8e2ee;
+        border-radius: 9px;
+        background: #f8fafc;
+        color: #172b4d;
+        padding: 11px 13px;
+        font-size: 14px;
+    }
+
+    .atlas-demo-v2-field textarea.form-control {
+        min-height: 112px;
+        resize: vertical;
+    }
+
+    .atlas-demo-v2-field .form-control:focus,
+    .atlas-demo-v2-field .form-select:focus {
+        background: #fff;
+        border-color: #2685ed;
+        box-shadow: 0 0 0 3px rgba(38,133,237,.12);
+    }
+
+    .atlas-demo-v2-field .text-danger {
+        display: block;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .atlas-demo-v2-consent {
+        margin-top: 23px;
+        font-size: 13px;
+        color: #475569;
+    }
+
+        .atlas-demo-v2-consent a {
+            color: #1768c1;
+            font-weight: 650;
+        }
+
+    .atlas-demo-v2-privacy {
+        margin: 15px 0 20px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #64748b;
+    }
+
+    .atlas-demo-v2-submit {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-height: 52px;
+        border: 0;
+        border-radius: 10px;
+        background: linear-gradient(100deg,#14529b,#2685ed);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 750;
+        transition: filter .2s, transform .2s;
+    }
+
+        .atlas-demo-v2-submit:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        .atlas-demo-v2-submit:disabled {
+            opacity: .65;
+            cursor: wait;
+            transform: none;
+        }
+
+    .atlas-demo-v2-secure {
+        margin-top: 16px;
+        color: #94a3b8;
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .atlas-demo-v2 .atlas-demo-honeypot {
+        position: absolute !important;
+        left: -10000px !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+    }
+
+    @@media (max-width: 1100px) {
+        .atlas-demo-v2-info {
+            padding: 45px 30px;
+        }
+
+        .atlas-demo-v2-form-side {
+            padding: 24px;
+        }
+
+        .atlas-demo-v2-form-card {
+            padding: 27px;
+        }
+    }
+
+    @@media (max-width: 900px) {
+        .atlas-demo-v2-shell {
+            grid-template-columns: 1fr;
+        }
+
+        .atlas-demo-v2-info {
+            padding: 42px 30px;
+        }
+
+        .atlas-demo-v2-form-side {
+            padding: 25px;
+        }
+    }
+
+    @@media (max-width: 575px) {
+        .atlas-demo-v2 {
+            padding: 25px 0 40px;
+        }
+
+        .atlas-demo-v2-shell {
+            border-radius: 16px;
+        }
+
+        .atlas-demo-v2-info {
+            padding: 34px 23px;
+        }
+
+            .atlas-demo-v2-info h1 {
+                font-size: 32px;
+            }
+
+        .atlas-demo-v2-form-side {
+            padding: 14px;
+        }
+
+        .atlas-demo-v2-form-card {
+            padding: 24px 17px;
+        }
+
+        .atlas-demo-v2-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .atlas-demo-v2-form-heading h2 {
+            font-size: 25px;
+        }
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const form = document.getElementById("atlasDemoForm");
+
+        const params = new URLSearchParams(window.location.search);
+
+        const urun = params.get('urun');
+        const paket = params.get('paket');
+        const depo = params.get('depo');
+        const kullanici = params.get('kullanici');
+
+        const urunField = document.getElementById('Urun');
+        const mesajField = document.getElementById('Mesaj');
+
+        if (urunField && urun === 'ATLAS WMS' &&
+            !urunField.value) {
+            urunField.value = urun;
+            urunField.dispatchEvent(new Event('change', {
+                bubbles: true
+            }));
+        }
+
+        if (mesajField && paket && !mesajField.value) {
+
+            const validPackages = [
+                'Mini', 'Başlangıç', 'Profesyonel',
+                'Business', 'Kurumsal'
+            ];
+
+            if (validPackages.includes(paket)) {
+
+                const details = [];
+
+                if (depo && /^\d{1,4}$/.test(depo)) {
+                    details.push(depo + ' depo');
+                }
+
+                if (kullanici && /^\d{1,4}$/.test(kullanici)) {
+                    details.push(kullanici + ' kullanıcı');
+                }
+
+                details.push(paket + ' Paket ile ilgileniyorum.');
+
+                mesajField.value = details.join(', ');
+            }
+        }
+
+            const button = form?.querySelector('button[type="submit"]');
+
+            if (!form || !button) return;
+
+            let sending = false;
+
+            form.addEventListener("submit", function (event) {
+
+                if (sending) {
+                    event.preventDefault();
+                    return;
+                }
+
+                if (!form.checkValidity()) return;
+
+                if (window.jQuery &&
+                    window.jQuery.validator &&
+                    !window.jQuery(form).valid()) {
+                    return;
+                }
+
+                sending = true;
+                button.disabled = true;
+                button.textContent = "Talebiniz gönderiliyor...";
+            });
+
+        });
+    </script>
+}

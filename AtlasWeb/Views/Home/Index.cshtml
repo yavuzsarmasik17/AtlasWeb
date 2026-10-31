@@ -1,0 +1,626 @@
+﻿@{
+    ViewData["Title"] = "ATLAS | Akıllı Yazılım Çözümleri";
+}
+
+<style>
+    .atlas-home {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #172b4d;
+    }
+
+    .atlas-hero {
+        background: linear-gradient(120deg, #071c39, #14529b);
+        color: white;
+        border-radius: 20px;
+        padding: 85px 35px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .atlas-hero h1 {
+            font-size: clamp(36px, 5vw, 60px);
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .atlas-hero p {
+            font-size: 18px;
+            max-width: 750px;
+            margin: 20px auto;
+            color: #e0edff;
+        }
+
+    .atlas-btn {
+        display: inline-block;
+        background: #2685ed;
+        color: white;
+        text-decoration: none;
+        border-radius: 9px;
+        padding: 13px 24px;
+        margin: 7px;
+        font-weight: 600;
+    }
+
+        .atlas-btn:hover {
+            background: #0869d4;
+            color: white;
+        }
+
+    .atlas-btn-outline {
+        background: transparent;
+        border: 1px solid #c8dcff;
+    }
+
+    .atlas-section {
+        padding: 65px 0 20px;
+    }
+
+    .atlas-heading {
+        font-weight: 750;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .atlas-subtitle {
+        text-align: center;
+        color: #64748b;
+        max-width: 760px;
+        margin: 0 auto 35px;
+    }
+
+    .atlas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .atlas-card {
+        background: white;
+        border: 1px solid #e1e8f1;
+        border-radius: 14px;
+        padding: 27px;
+        box-shadow: 0 5px 20px rgba(15, 35, 70, .05);
+        height: 100%;
+    }
+
+        .atlas-card h3 {
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .atlas-card p, .atlas-card li {
+            color: #58677e;
+            line-height: 1.8;
+        }
+
+        .atlas-card ul {
+            padding-left: 19px;
+        }
+
+    .atlas-price {
+        font-size: 32px;
+        font-weight: 800;
+        color: #14529b;
+        margin: 15px 0;
+    }
+
+        .atlas-price small {
+            font-size: 14px;
+            font-weight: 400;
+            color: #64748b;
+        }
+
+    .atlas-label {
+        display: inline-block;
+        background: #eaf3ff;
+        color: #14529b;
+        border-radius: 20px;
+        padding: 5px 12px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .atlas-contact {
+        background: #f0f6ff;
+        border-radius: 18px;
+        padding: 45px 25px;
+        text-align: center;
+        margin: 60px 0;
+    }
+
+    @@media (max-width: 850px) {
+        .atlas-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .atlas-hero {
+            padding: 55px 20px;
+        }
+    }
+</style>
+
+<div class="atlas-home">
+
+    <section class="atlas-hero">
+        <span class="atlas-label">YAZILIM VE TEKNOLOJİ ÇÖZÜMLERİ</span>
+
+        <h1>ATLAS</h1>
+
+        <h2>İşletmenizin Dijital Gücü</h2>
+
+        <p>
+            Antrepo yönetimi, stok takibi, muhasebe,
+            yapay zekâ destekli belge işleme ve iş süreçleri
+            için geliştirdiğimiz yazılım çözümlerini keşfedin.
+        </p>
+
+        <a href="#urunler" class="atlas-btn">
+            Yazılımlarımızı Keşfedin
+        </a>
+
+        <a asp-controller="Demo" asp-action="Index" class="atlas-btn atlas-btn-outline">
+            Demo Talep Et
+        </a>
+    </section>
+
+
+    <section class="atlas-product-showcase">
+
+        <div class="atlas-showcase-content">
+
+            <span class="atlas-showcase-label">
+                ATLAS SOFT TEKNOLOJİLERİ
+            </span>
+
+            <h2>
+                İşletmenizin Yönetimini
+                <span>Tek Platformda Toplayın</span>
+            </h2>
+
+            <p>
+                Atlas Soft ile antrepo operasyonlarını,
+                stok hareketlerini, muhasebe süreçlerini
+                ve iş takibini dijital ortamda yönetin.
+            </p>
+
+            <p>
+                ATLAS WMS, operasyonel verilerinizi
+                tek merkezden takip etmenizi sağlar.
+                Yapay zekâ destekli belge okuma ve
+                raporlama özellikleri ise geliştirme
+                çalışmalarımızın önemli bir parçasıdır.
+            </p>
+
+            <a href="#urunler" class="atlas-btn">
+                Çözümlerimizi İnceleyin
+            </a>
+
+        </div>
+
+        <div class="atlas-showcase-visual">
+
+            <div class="atlas-software-window">
+
+                <div class="atlas-window-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <strong>ATLAS WMS</strong>
+                </div>
+
+                <div class="atlas-window-body">
+
+                    <div class="atlas-window-title">
+                        Operasyon Yönetim Paneli
+                    </div>
+
+                    <div class="atlas-mini-stats">
+                        <div>
+                            <small>Mal Kabul</small>
+                            <strong>128</strong>
+                        </div>
+
+                        <div>
+                            <small>Aktif Stok</small>
+                            <strong>2.450</strong>
+                        </div>
+
+                        <div>
+                            <small>Mal Çıkış</small>
+                            <strong>86</strong>
+                        </div>
+                    </div>
+
+                    <div class="atlas-fake-chart">
+                        <div style="height:40%"></div>
+                        <div style="height:65%"></div>
+                        <div style="height:48%"></div>
+                        <div style="height:85%"></div>
+                        <div style="height:60%"></div>
+                        <div style="height:95%"></div>
+                        <div style="height:75%"></div>
+                    </div>
+
+                    <p class="atlas-demo-note">
+                        Temsili yazılım paneli
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="urunler" class="atlas-section">
+
+        <h2 class="atlas-heading">Yazılım Çözümlerimiz</h2>
+
+        <p class="atlas-subtitle">
+            Farklı sektörlerdeki işletmelerin ihtiyaçlarına
+            uygun, kullanımı kolay ve geliştirilebilir çözümler.
+        </p>
+
+        <div class="atlas-grid">
+
+            <article class="atlas-card">
+                <span class="atlas-label">ANTREPO VE DEPO</span>
+                <h3>ATLAS WMS</h3>
+                <p>
+                    Antrepo ve depo operasyonlarının
+                    merkezi olarak yönetilmesini sağlayan
+                    web tabanlı yönetim sistemi.
+                </p>
+                <ul>
+                    <li>Mal kabul ve mal çıkış</li>
+                    <li>Stok ve adres takibi</li>
+                    <li>Ardiye süreçleri</li>
+                    <li>Cari hesap ve muhasebe</li>
+                    <li>Operasyon raporları</li>
+                </ul>
+            </article>
+
+            <article class="atlas-card">
+                <span class="atlas-label">YAPAY ZEKÂ</span>
+                <h3>ATLAS AI</h3>
+                <p>
+                    Tekrarlanan veri girişlerini azaltmayı
+                    ve işletme verilerini daha kolay analiz
+                    etmeyi hedefleyen akıllı çözümler.
+                </p>
+                <ul>
+                    <li>Beyanname okuma</li>
+                    <li>Belgeden veri çıkarma</li>
+                    <li>Doğal dille rapor sorgulama</li>
+                    <li>Veri analizi</li>
+                    <li>Akıllı iş süreçleri</li>
+                </ul>
+
+            </article>
+
+            <article class="atlas-card">
+                <span class="atlas-label">TİCARİ YAZILIMLAR</span>
+                <h3>ATLAS Business</h3>
+                <p>
+                    İşletmelerin satın alma, teklif
+                    ve talep süreçlerini daha düzenli
+                    yönetebilmesi için planlanan çözümler.
+                </p>
+                <ul>
+                    <li>Satın alma talepleri</li>
+                    <li>Teklif karşılaştırma</li>
+                    <li>Onay süreçleri</li>
+                    <li>Tedarikçi yönetimi</li>
+                    <li>İş takip sistemi</li>
+                </ul>
+
+            </article>
+
+        </div>
+    </section>
+
+    <section id="ozellikler" class="atlas-section">
+
+        <h2 class="atlas-heading">Neden ATLAS?</h2>
+
+        <p class="atlas-subtitle">
+            Karmaşık operasyonları daha anlaşılır,
+            takip edilebilir ve verimli hale getirmeyi amaçlıyoruz.
+        </p>
+
+        <div class="atlas-grid">
+
+            <div class="atlas-card">
+                <h3>Kolay Kullanım</h3>
+                <p>
+                    Sade ekranlar ve anlaşılır menüler
+                    sayesinde günlük işlemlerinizi
+                    kolayca yönetin.
+                </p>
+            </div>
+
+            <div class="atlas-card">
+                <h3>Web Tabanlı Yapı</h3>
+                <p>
+                    Yetkilendirilmiş kullanıcılar,
+                    uygun internet bağlantısı üzerinden
+                    bilgisayar, tablet veya telefonla
+                    sisteme erişebilir.
+                </p>
+            </div>
+
+            <div class="atlas-card">
+                <h3>Geliştirilebilir Sistem</h3>
+                <p>
+                    İşletmelerin değişen ihtiyaçlarına
+                    göre yeni modüller ve özellikler
+                    eklenebilecek şekilde tasarlanır.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="fiyatlar" class="atlas-section atlas-pricing-section">
+        <h2 class="atlas-heading">Fiyatlandırma</h2>
+        <p class="atlas-subtitle">İhtiyacınıza uygun ATLAS WMS paketini seçin. Fiyatlar taslak olup KDV hariçtir.</p>
+        <div class="atlas-billing-switch" role="group" aria-label="Ödeme dönemi">
+            <button type="button" class="atlas-billing-option active" data-billing="monthly" aria-pressed="true">Aylık</button>
+            <button type="button" class="atlas-billing-option" data-billing="yearly" aria-pressed="false">Yıllık <span>%15 indirim</span></button>
+        </div>
+        <p class="atlas-billing-description" id="atlasBillingDescription">Aylık abonelik fiyatları gösteriliyor.</p>
+        <div class="atlas-pricing-grid">
+            <article class="atlas-card atlas-pricing-card">
+
+                <h3>Mini</h3>
+                <div class="atlas-price"><span class="atlas-price-value" data-monthly="4900" data-yearly="49980">4.900 TL</span><small class="atlas-price-period"> / ay + KDV</small></div>
+                <ul>
+                    <li>1 depo</li>
+                    <li>2 kullanıcı</li>
+                    <li>Temel stok takibi</li>
+                    <li>Temel raporlar</li>
+                </ul>
+                <a href="/Demo" class="atlas-btn">Bilgi Al</a>
+            </article>
+            <article class="atlas-card atlas-pricing-card">
+
+                <h3>Başlangıç</h3>
+                <div class="atlas-price"><span class="atlas-price-value" data-monthly="7900" data-yearly="80580">7.900 TL</span><small class="atlas-price-period"> / ay + KDV</small></div>
+                <ul>
+                    <li>1 depo</li>
+                    <li>5 kullanıcı</li>
+                    <li>Mal kabul ve çıkış</li>
+                    <li>Stok ve adres takibi</li>
+                    <li>Temel raporlar</li>
+                </ul>
+                <a href="/Demo" class="atlas-btn">Bilgi Al</a>
+            </article>
+            <article class="atlas-card atlas-pricing-card">
+                <span class="atlas-label">ÖNERİLEN PAKET</span>
+                <h3>Profesyonel</h3>
+                <div class="atlas-price"><span class="atlas-price-value" data-monthly="14900" data-yearly="151980">14.900 TL</span><small class="atlas-price-period"> / ay + KDV</small></div>
+                <ul>
+                    <li>2 depo</li>
+                    <li>10 kullanıcı</li>
+                    <li>Ardiye yönetimi</li>
+                    <li>Muhasebe işlemleri</li>
+                    <li>Operasyon raporları</li>
+                </ul>
+                <a href="/Demo" class="atlas-btn">Bilgi Al</a>
+            </article>
+            <article class="atlas-card atlas-pricing-card">
+
+                <h3>Business</h3>
+                <div class="atlas-price"><span class="atlas-price-value" data-monthly="24900" data-yearly="253980">24.900 TL</span><small class="atlas-price-period"> / ay + KDV</small></div>
+                <ul>
+                    <li>3 depo</li>
+                    <li>20 kullanıcı</li>
+                    <li>Gelişmiş raporlar</li>
+                    <li>İş süreçleri ve yetkilendirme</li>
+                    <li>Öncelikli destek seçenekleri</li>
+                </ul>
+                <a href="/Demo" class="atlas-btn">Bilgi Al</a>
+            </article>
+            <article class="atlas-card atlas-pricing-card">
+
+                <h3>Kurumsal</h3>
+                <div class="atlas-price">Özel Teklif</div>
+                <ul>
+                    <li>Çoklu depo</li>
+                    <li>Özel entegrasyon seçenekleri</li>
+                    <li>İhtiyaca özel kullanıcı sayısı</li>
+                    <li>Kurumsal destek</li>
+                </ul>
+                <a href="/Demo" class="atlas-btn">Teklif İste</a>
+            </article>
+        </div>
+        <p class="atlas-pricing-disclaimer">Yıllık fiyatlar 12 aylık peşin ödeme üzerinden %15 indirimle hesaplanır. Paket kapsamları ve ücretler teklif aşamasında kesinleşir.</p>
+    </section>
+
+
+    <section id="sss" class="atlas-faq-section">
+        <div class="container">
+            <div class="atlas-faq-heading">
+                <span class="atlas-faq-eyebrow">MERAK ETTİKLERİNİZ</span>
+                <h2>Sık Sorulan Sorular</h2>
+                <p>ATLAS SOFT çözümleri hakkında merak edilenler.</p>
+            </div>
+
+            <div class="atlas-faq-grid">
+
+                <details class="atlas-faq-item">
+                    <summary>ATLAS nedir?</summary>
+                    <p>ATLAS SOFT, işletmelerin operasyonlarını dijital ortamda yönetmelerine yardımcı olan yazılım çözümleri markasıdır.</p>
+                </details>
+
+                <details class="atlas-faq-item">
+                    <summary>ATLAS WMS kimler için uygundur?</summary>
+                    <p>Antrepo işletmeleri, depolar ve lojistik operasyonlarını dijital ortamda takip etmek isteyen firmalar için geliştirilmiştir.</p>
+                </details>
+
+                <details class="atlas-faq-item">
+                    <summary>Telefon ve tablet üzerinden kullanılabilir mi?</summary>
+                    <p>Evet. ATLAS WMS web tabanlıdır ve mobil uyumlu ekranları telefon ve tablet üzerinden kullanılabilir. Kullanım kapsamı modüle göre değişebilir.</p>
+                </details>
+
+                <details class="atlas-faq-item">
+                    <summary>Yapay zekâ özellikleri mevcut mu?</summary>
+                    <p>ATLAS WMS, antrepo beyannamelerini PDF üzerinden OCR teknolojisiyle okuyabilir. Diğer yapay zekâ özelliklerinin kapsamı ürün ve modüle göre değişebilir.</p>
+                </details>
+
+                <details class="atlas-faq-item">
+                    <summary>Kurulum ve destek ücretleri dahil mi?</summary>
+                    <p>Kurulum, eğitim, destek ve özel entegrasyon kapsamı teklif sırasında ayrıca belirlenmektedir.</p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .atlas-faq-section {
+            padding: 90px 0;
+            background: linear-gradient(145deg, #071c39, #102b4e);
+        }
+
+        .atlas-faq-heading {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .atlas-faq-eyebrow {
+            color: #60a5fa;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .atlas-faq-heading h2 {
+            color: #fff;
+            font-size: clamp(30px, 4vw, 44px);
+            font-weight: 800;
+            margin: 12px 0;
+        }
+
+        .atlas-faq-heading p {
+            color: #a9c0dd;
+            font-size: 15px;
+        }
+
+        .atlas-faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .atlas-faq-item {
+            background: #152d4d;
+            border: 1px solid #31547e;
+            border-radius: 14px;
+            padding: 0 22px;
+            transition: border-color .2s, background .2s;
+        }
+
+            .atlas-faq-item:hover,
+            .atlas-faq-item[open] {
+                border-color: #2685ed;
+                background: #1a3659;
+            }
+
+            .atlas-faq-item summary {
+                color: #fff;
+                padding: 22px 0;
+                font-size: 16px;
+                font-weight: 700;
+                cursor: pointer;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+            }
+
+                .atlas-faq-item summary::-webkit-details-marker {
+                    display: none;
+                }
+
+                .atlas-faq-item summary::after {
+                    content: "+";
+                    color: #60a5fa;
+                    font-size: 26px;
+                    font-weight: 400;
+                    flex-shrink: 0;
+                }
+
+            .atlas-faq-item[open] summary::after {
+                content: "−";
+            }
+
+            .atlas-faq-item p {
+                color: #c1d1e5;
+                line-height: 1.8;
+                font-size: 14px;
+                padding-bottom: 22px;
+                margin: 0;
+            }
+
+        @@media (max-width: 767px) {
+            .atlas-faq-section {
+                padding: 60px 0;
+            }
+
+            .atlas-faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .atlas-faq-item {
+                padding: 0 17px;
+            }
+        }
+    </style>
+
+
+</div>
+<button id="atlasBackToTop" class="atlas-back-to-top" type="button" aria-label="Sayfanın başına dön" title="Yukarı çık">↑</button>
+
+<script>
+    (function () {
+        const topButton = document.getElementById('atlasBackToTop');
+        function updateTopButton() {
+            topButton.classList.toggle('is-visible', window.scrollY > 400);
+        }
+        window.addEventListener('scroll', updateTopButton, { passive: true });
+        updateTopButton();
+        topButton.addEventListener('click', function () {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        });
+
+        const billingButtons = document.querySelectorAll('.atlas-billing-option');
+        const priceElements = document.querySelectorAll('.atlas-price-value');
+        const description = document.getElementById('atlasBillingDescription');
+        const formatter = new Intl.NumberFormat('tr-TR');
+        billingButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const yearly = button.dataset.billing === 'yearly';
+                billingButtons.forEach(function (b) {
+                    const selected = b === button;
+                    b.classList.toggle('active', selected);
+                    b.setAttribute('aria-pressed', String(selected));
+                });
+                priceElements.forEach(function (price) {
+                    const amount = Number(yearly ? price.dataset.yearly : price.dataset.monthly);
+                    price.textContent = formatter.format(amount) + ' TL';
+                    price.nextElementSibling.textContent = yearly ? ' / yıl + KDV' : ' / ay + KDV';
+                });
+                description.textContent = yearly
+                    ? 'Yıllık peşin ödeme fiyatları (%15 indirimli) gösteriliyor.'
+                    : 'Aylık abonelik fiyatları gösteriliyor.';
+            });
+        });
+    })();
+</script>

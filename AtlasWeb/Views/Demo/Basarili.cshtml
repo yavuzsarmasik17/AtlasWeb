@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Talebiniz Alındı | ATLAS SOFT";
+}
+
+<div class="atlas-success-page">
+
+    <div class="atlas-success-card">
+
+        <div class="atlas-success-icon">
+            ✓
+        </div>
+
+        <div class="atlas-success-eyebrow">
+            ATLAS SOFT
+        </div>
+
+        <h1>Demo Talebiniz Alındı!</h1>
+
+        <p>
+            İlginiz için teşekkür ederiz.
+            Demo talebiniz başarıyla iletildi.
+        </p>
+
+        <p>
+            Ekibimiz talebinizi değerlendirdikten
+            sonra sizinle iletişime geçecektir.
+        </p>
+
+        <div class="atlas-success-info">
+            <span>✓ Talebiniz iletildi</span>
+            <span>✓ Ekibimiz değerlendirecek</span>
+            <span>✓ Sizinle iletişime geçilecek</span>
+        </div>
+
+        <a asp-controller="Home"
+           asp-action="Index"
+           class="atlas-success-button">
+            Ana Sayfaya Dön →
+        </a>
+
+    </div>
+
+</div>
+
+<style>
+    .atlas-success-page {
+        min-height: 65vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 65px 15px;
+    }
+
+    .atlas-success-card {
+        width: 100%;
+        max-width: 680px;
+        text-align: center;
+        background: linear-gradient( 145deg, #071c39, #0e3769);
+        color: white;
+        padding: 65px 40px;
+        border-radius: 24px;
+        box-shadow: 0 25px 65px rgba(7,28,57,.2);
+    }
+
+    .atlas-success-icon {
+        width: 88px;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        border-radius: 50%;
+        background: #17875c;
+        color: white;
+        font-size: 48px;
+        font-weight: 700;
+        box-shadow: 0 0 35px rgba(23,135,92,.35);
+    }
+
+    .atlas-success-eyebrow {
+        color: #74baff;
+        font-size: 12px;
+        letter-spacing: 2px;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+
+    .atlas-success-card h1 {
+        color: white;
+        font-size: clamp(28px,4vw,39px);
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .atlas-success-card p {
+        color: #c6d8ee;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .atlas-success-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin: 30px 0;
+        color: #b5d8fa;
+        font-size: 12px;
+    }
+
+    .atlas-success-button {
+        display: inline-block;
+        padding: 15px 32px;
+        border-radius: 11px;
+        background: #2685ed;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background .2s;
+    }
+
+        .atlas-success-button:hover {
+            background: #1768c1;
+            color: white;
+        }
+
+    @@media (max-width: 575px) {
+        .atlas-success-card {
+            padding: 45px 22px;
+        }
+    }
+</style>

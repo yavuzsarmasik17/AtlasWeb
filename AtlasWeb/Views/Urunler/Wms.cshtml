@@ -1,0 +1,431 @@
+﻿@{
+    ViewData["Title"] = "ATLAS WMS | Atlas Soft";
+}
+
+<div class="atlas-wms-page">
+
+    <section class="atlas-hero">
+        <span class="atlas-label">ATLAS SOFT ÜRÜNLERİ</span>
+        <h1>ATLAS WMS</h1>
+        <h2>Akıllı Antrepo ve Depo Yönetimi</h2>
+
+        <p>
+            Mal kabulden mal çıkışa, stok ve adres takibinden
+            ardiye ve muhasebeye kadar antrepo operasyonlarınızı
+            tek platformdan yönetin.
+        </p>
+
+        <a class="atlas-btn" href="#moduller">
+            Özellikleri Keşfet
+        </a>
+
+
+        <a class="atlas-btn atlas-btn-outline"
+           asp-controller="Demo"
+           asp-action="Index"
+           asp-route-urun="ATLAS WMS">
+            Demo Talep Et
+        </a>
+
+    </section>
+
+
+
+    <!-- ATLAS WMS - Özellik Paneli -->
+    <div class="atlas-wms-showcase">
+
+        <div class="atlas-wms-showcase-head">
+            <div>
+                <span class="atlas-wms-eyebrow">ATLAS WMS</span>
+                <h3>Operasyonlarınız Tek Merkezde</h3>
+                <p>Antrepo ve depo süreçlerinizi dijital ortamda yönetin.</p>
+            </div>
+            <div class="atlas-wms-showcase-symbol">✦</div>
+        </div>
+
+        <div class="atlas-wms-feature-grid">
+
+            <div class="atlas-wms-feature">
+                <div class="atlas-wms-feature-icon">📦</div>
+                <h4>Mal Kabul</h4>
+                <p>Giriş operasyonlarını kolayca yönetin.</p>
+            </div>
+
+            <div class="atlas-wms-feature">
+                <div class="atlas-wms-feature-icon">🏬</div>
+                <h4>Stok Yönetimi</h4>
+                <p>Stok ve depo hareketlerini takip edin.</p>
+            </div>
+
+            <div class="atlas-wms-feature">
+                <div class="atlas-wms-feature-icon">🚚</div>
+                <h4>Mal Çıkış</h4>
+                <p>Çıkış ve sevkiyat süreçlerini yönetin.</p>
+            </div>
+
+            <div class="atlas-wms-feature">
+                <div class="atlas-wms-feature-icon">📊</div>
+                <h4>Muhasebe</h4>
+                <p>Cari hesap ve ardiye süreçlerini izleyin.</p>
+            </div>
+
+            <div class="atlas-wms-feature">
+                <div class="atlas-wms-feature-icon">📄</div>
+                <h4>Beyanname OCR</h4>
+                <p>Beyanname bilgilerini otomatik okuyun.</p>
+            </div>
+
+            <div class="atlas-wms-feature">
+                <div class="atlas-wms-feature-icon">📱</div>
+                <h4>Mobil Kullanım</h4>
+                <p>Telefon ve tablet üzerinden erişin.</p>
+            </div>
+
+        </div>
+
+        <div class="atlas-wms-showcase-bottom">
+            <span>● Dijital Antrepo Yönetimi</span>
+            <span>ATLAS SOFT</span>
+        </div>
+
+    </div>
+
+
+    <section class="atlas-section" id="moduller">
+        <h2 class="atlas-heading">ATLAS WMS Modülleri</h2>
+        <p class="atlas-subtitle">
+            Antrepo operasyonlarının farklı aşamaları
+            için geliştirilmiş entegre çözümler.
+        </p>
+
+        <div class="atlas-grid">
+
+            <article class="atlas-card">
+                <span class="atlas-label">OPERASYON</span>
+                <h3>Mal Kabul Yönetimi</h3>
+                <p>
+                    Antrepoya giriş yapan yüklerin
+                    beyanname, firma, kap, ağırlık,
+                    konteyner ve araç bilgilerini kaydedin.
+                </p>
+                <ul>
+                    <li>Defter ve beyanname numarası</li>
+                    <li>Alıcı ve gönderici bilgileri</li>
+                    <li>Kap ve ağırlık takibi</li>
+                    <li>Giriş tarihi ve depo bilgisi</li>
+                    <li>Belge ilişkilendirme</li>
+                </ul>
+            </article>
+
+            <article class="atlas-card">
+                <span class="atlas-label">OPERASYON</span>
+                <h3>Mal Çıkış Yönetimi</h3>
+                <p>
+                    Tam ve parçalı mal çıkışlarını
+                    kayıt altına alarak yüklerin
+                    kalan miktarlarını takip edin.
+                </p>
+                <ul>
+                    <li>Komple çıkış</li>
+                    <li>Parçalı çıkış</li>
+                    <li>Çıkış beyannamesi</li>
+                    <li>Çıkış tarihi ve araç bilgisi</li>
+                    <li>Kalan kap ve miktar takibi</li>
+                </ul>
+            </article>
+
+            <article class="atlas-card">
+                <span class="atlas-label">DEPO YÖNETİMİ</span>
+                <h3>Stok ve Adres Takibi</h3>
+                <p>
+                    Depodaki yüklerin mevcut
+                    durumunu ve konumunu
+                    kolayca görüntüleyin.
+                </p>
+                <ul>
+                    <li>Depo ve adres bazlı takip</li>
+                    <li>Adres güncelleme</li>
+                    <li>Adres değişiklik geçmişi</li>
+                    <li>Firma ve beyanname arama</li>
+                    <li>Aktif yüklerin listelenmesi</li>
+                </ul>
+            </article>
+
+            <article class="atlas-card">
+                <span class="atlas-label">FİNANS</span>
+                <h3>Ardiye Yönetimi</h3>
+                <p>
+                    Yüklerin antrepoda kaldığı
+                    süreleri izleyin ve faturalama
+                    süreçlerini takip edin.
+                </p>
+                <ul>
+                    <li>Giriş tarihinden süre takibi</li>
+                    <li>30 günlük dönem kontrolü</li>
+                    <li>Faturalama takibi</li>
+                    <li>Elleçleme ve mesai kalemleri</li>
+                    <li>Parçalı çıkış işlemleri</li>
+                </ul>
+            </article>
+
+            <article class="atlas-card">
+                <span class="atlas-label">MUHASEBE</span>
+                <h3>Cari Hesap ve Muhasebe</h3>
+                <p>
+                    Firma hesaplarını ve
+                    muhasebe hareketlerini
+                    tek merkezden inceleyin.
+                </p>
+                <ul>
+                    <li>Cari hesap kayıtları</li>
+                    <li>Firma bazlı hareketler</li>
+                    <li>Borç ve alacak takibi</li>
+                    <li>Muhasebe raporları</li>
+                    <li>Finansal sorgulamalar</li>
+                </ul>
+            </article>
+
+            <article class="atlas-card">
+                <span class="atlas-label">YAPAY ZEKÂ AR-GE</span>
+                <h3>Akıllı Belge ve Raporlama</h3>
+                <p>
+                    Manuel veri girişini azaltmak
+                    ve raporlara daha hızlı erişmek
+                    amacıyla geliştirilen özellikler.
+                </p>
+                <ul>
+                    <li>Beyanname PDF okuma</li>
+                    <li>Belgeden alan çıkarma</li>
+                    <li>Doğal dille veri sorgulama</li>
+                    <li>Rapor oluşturma çalışmaları</li>
+                    <li>Veri doğrulama</li>
+                </ul>
+                <p><strong>Geliştirme ve test aşamasında.</strong></p>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="atlas-section">
+        <h2 class="atlas-heading">ATLAS WMS Nasıl Çalışır?</h2>
+
+        <p class="atlas-subtitle">
+            Antrepo operasyonlarını anlaşılır bir
+            iş akışıyla takip edin.
+        </p>
+
+        <div class="atlas-grid">
+            <div class="atlas-card">
+                <h3>01 — Mal Kabul</h3>
+                <p>
+                    Gelen yükün beyanname ve
+                    operasyon bilgileri kaydedilir.
+                </p>
+            </div>
+
+            <div class="atlas-card">
+                <h3>02 — Depolama</h3>
+                <p>
+                    Yükün depo adresi belirlenir,
+                    stok ve hareket bilgileri izlenir.
+                </p>
+            </div>
+
+            <div class="atlas-card">
+                <h3>03 — Çıkış ve Takip</h3>
+                <p>
+                    Mal çıkışları kaydedilir,
+                    kalan stok ve finansal
+                    süreçler takip edilir.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="atlas-section">
+        <h2 class="atlas-heading">Kullanıcı ve Erişim Yönetimi</h2>
+
+        <div class="atlas-card">
+            <h3>Yetkilendirilmiş Kullanıcılar</h3>
+            <p>
+                Kullanıcıların görevlerine göre
+                erişim yetkileri düzenlenebilir.
+                Yönetim ve operasyon ekranları
+                farklı kullanıcı rollerine
+                göre yapılandırılabilir.
+            </p>
+        </div>
+    </section>
+
+    <section class="atlas-contact">
+        <h2 class="atlas-heading">
+            ATLAS WMS Hakkında Bilgi Alın
+        </h2>
+
+        <p>
+            İşletmenize uygun kullanım modeli,
+            kurulum ve fiyatlandırma seçenekleri
+            hakkında bilgi alın.
+        </p>
+
+        <a class="atlas-btn"
+           asp-controller="Home"
+           asp-action="Index"
+           asp-fragment="fiyatlar">
+            Fiyatları İncele
+        </a>
+
+
+        <a class="atlas-btn atlas-btn-outline"
+           asp-controller="Demo"
+           asp-action="Index"
+           asp-route-urun="ATLAS WMS">
+            Demo Talep Et
+        </a>
+
+    </section>
+
+</div>
+
+<style>
+    /* ATLAS WMS tanitim paneli - sadece bu sayfayi etkiler */
+    .atlas-wms-page .atlas-wms-showcase {
+        background: linear-gradient(145deg, #091b35, #123965);
+        border: 1px solid #31547e;
+        border-radius: 22px;
+        padding: 35px;
+        margin: 28px 0 42px;
+        color: #fff;
+        box-shadow: 0 20px 55px rgba(0,0,0,.18);
+    }
+
+    .atlas-wms-page .atlas-wms-showcase-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+
+    .atlas-wms-page .atlas-wms-eyebrow {
+        color: #60a5fa;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+
+    .atlas-wms-page .atlas-wms-showcase-head h3 {
+        color: #fff;
+        font-size: clamp(23px,3vw,32px);
+        font-weight: 800;
+        margin: 10px 0;
+    }
+
+    .atlas-wms-page .atlas-wms-showcase-head p {
+        color: #b8cbe3;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .atlas-wms-page .atlas-wms-showcase-symbol {
+        color: #60a5fa;
+        font-size: 48px;
+    }
+
+    .atlas-wms-page .atlas-wms-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 15px;
+    }
+
+    .atlas-wms-page .atlas-wms-feature {
+        min-width: 0;
+        background: rgba(255,255,255,.055);
+        border: 1px solid rgba(147,197,253,.20);
+        border-radius: 15px;
+        padding: 24px 20px;
+        transition: transform .25s ease,background .25s ease,border-color .25s ease;
+    }
+
+        .atlas-wms-page .atlas-wms-feature:hover {
+            transform: translateY(-5px);
+            background: rgba(37,99,235,.15);
+            border-color: #60a5fa;
+        }
+
+    .atlas-wms-page .atlas-wms-feature-icon {
+        font-size: 29px;
+        margin-bottom: 15px;
+    }
+
+    .atlas-wms-page .atlas-wms-feature h4 {
+        color: #fff;
+        font-size: 17px;
+        font-weight: 800;
+        margin: 0 0 10px;
+    }
+
+    .atlas-wms-page .atlas-wms-feature p {
+        color: #c1d1e5;
+        font-size: 13px;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .atlas-wms-page .atlas-wms-showcase-bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        border-top: 1px solid #31547e;
+        margin-top: 28px;
+        padding-top: 20px;
+        color: #a9c7e8;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    @@media (max-width: 767px) {
+        .atlas-wms-page .atlas-wms-showcase {
+            padding: 22px 16px;
+            border-radius: 16px;
+        }
+
+        .atlas-wms-page .atlas-wms-feature-grid {
+            grid-template-columns: repeat(2,minmax(0,1fr));
+            gap: 10px;
+        }
+
+        .atlas-wms-page .atlas-wms-feature {
+            padding: 17px 12px;
+        }
+
+            .atlas-wms-page .atlas-wms-feature h4 {
+                font-size: 14px;
+            }
+
+            .atlas-wms-page .atlas-wms-feature p {
+                font-size: 12px;
+            }
+
+        .atlas-wms-page .atlas-wms-showcase-symbol {
+            display: none;
+        }
+    }
+
+    @@media (max-width: 380px) {
+        .atlas-wms-page .atlas-wms-feature-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @@media (prefers-reduced-motion: reduce) {
+        .atlas-wms-page .atlas-wms-feature {
+            transition: none;
+        }
+
+            .atlas-wms-page .atlas-wms-feature:hover {
+                transform: none;
+            }
+    }
+</style>

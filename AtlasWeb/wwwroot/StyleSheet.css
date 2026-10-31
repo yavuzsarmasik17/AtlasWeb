@@ -1,0 +1,1756 @@
+﻿
+/* ATLAS SOFT - ANIMASYONLU TASARIM */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* SABİT ÜST MENÜ */
+.atlas-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+}
+
+.atlas-brand {
+    transition: transform 0.3s ease;
+}
+
+    .atlas-brand:hover {
+        transform: scale(1.05);
+    }
+
+/* HAREKETLİ ANA EKRAN */
+.atlas-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient( 120deg, #071c39, #14529b, #1674cc, #071c39 );
+    background-size: 300% 300%;
+    animation: atlasGradient 12s ease infinite;
+}
+
+    .atlas-hero::before {
+        content: "";
+        position: absolute;
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.08);
+        top: -170px;
+        right: -100px;
+        z-index: -1;
+        animation: atlasFloat 8s ease-in-out infinite;
+    }
+
+    .atlas-hero::after {
+        content: "";
+        position: absolute;
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        background: rgba(38,133,237,0.22);
+        bottom: -110px;
+        left: -70px;
+        z-index: -1;
+        animation: atlasFloat 10s ease-in-out infinite reverse;
+    }
+
+    /* YAZI GİRİŞ ANİMASYONLARI */
+    .atlas-hero h1 {
+        animation: atlasFadeUp 0.8s ease both;
+    }
+
+    .atlas-hero h2 {
+        animation: atlasFadeUp 0.9s ease 0.15s both;
+    }
+
+    .atlas-hero p {
+        animation: atlasFadeUp 0.9s ease 0.3s both;
+    }
+
+/* KART ANİMASYONLARI */
+.atlas-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+    .atlas-card:hover {
+        transform: translateY(-8px);
+        border-color: #a9cef9;
+        box-shadow: 0 20px 40px rgba(15,35,70,0.13);
+    }
+
+/* BUTON ANİMASYONLARI */
+.atlas-btn,
+.atlas-demo-button {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+    .atlas-btn:hover,
+    .atlas-demo-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 22px rgba(20,82,155,0.25);
+    }
+
+/* SAYFA KAYDIRMA ANİMASYONU */
+.atlas-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+    .atlas-reveal.atlas-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* ANİMASYON TANIMLARI */
+@keyframes atlasGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes atlasFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(25px);
+    }
+}
+
+@keyframes atlasFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+    .atlas-card:hover {
+        transform: none;
+    }
+
+    .atlas-hero::before {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* ERİŞİLEBİLİRLİK */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .atlas-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ATLAS SOFT - ÜRÜN TANITIM ALANI */
+
+.atlas-product-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 90px 20px;
+}
+
+.atlas-showcase-label {
+    display: inline-block;
+    color: #14529b;
+    background: #eaf3ff;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.atlas-showcase-content h2 {
+    font-size: clamp(28px, 3.5vw, 43px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+    .atlas-showcase-content h2 span {
+        color: #1674cc;
+    }
+
+.atlas-showcase-content p {
+    color: #64748b;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.atlas-showcase-visual {
+    animation: atlasShowcaseFloat 6s ease-in-out infinite;
+}
+
+.atlas-software-window {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #dce6f2;
+    box-shadow: 0 25px 65px rgba(7,28,57,.15);
+}
+
+.atlas-window-header {
+    background: #071c39;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+    .atlas-window-header span {
+        width: 10px;
+        height: 10px;
+        background: #f87171;
+        border-radius: 50%;
+    }
+
+        .atlas-window-header span:nth-child(2) {
+            background: #fbbf24;
+        }
+
+        .atlas-window-header span:nth-child(3) {
+            background: #34d399;
+        }
+
+    .atlas-window-header strong {
+        color: white;
+        font-size: 13px;
+        margin-left: auto;
+    }
+
+.atlas-window-body {
+    padding: 25px;
+}
+
+.atlas-window-title {
+    font-weight: 750;
+    font-size: 17px;
+    margin-bottom: 22px;
+}
+
+.atlas-mini-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+    .atlas-mini-stats div {
+        background: #f1f6fc;
+        padding: 15px 10px;
+        border-radius: 10px;
+    }
+
+    .atlas-mini-stats small {
+        display: block;
+        color: #64748b;
+        font-size: 11px;
+    }
+
+    .atlas-mini-stats strong {
+        font-size: 22px;
+        color: #14529b;
+    }
+
+.atlas-fake-chart {
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 20px 5px 0;
+    margin-top: 25px;
+    border-bottom: 1px solid #dce6f2;
+}
+
+    .atlas-fake-chart div {
+        width: 12%;
+        background: linear-gradient(#2685ed, #9acaff);
+        border-radius: 6px 6px 0 0;
+        animation: atlasBarGrow 1.2s ease both;
+        transform-origin: bottom;
+    }
+
+        .atlas-fake-chart div:nth-child(2) {
+            animation-delay: .1s;
+        }
+
+        .atlas-fake-chart div:nth-child(3) {
+            animation-delay: .2s;
+        }
+
+        .atlas-fake-chart div:nth-child(4) {
+            animation-delay: .3s;
+        }
+
+        .atlas-fake-chart div:nth-child(5) {
+            animation-delay: .4s;
+        }
+
+        .atlas-fake-chart div:nth-child(6) {
+            animation-delay: .5s;
+        }
+
+        .atlas-fake-chart div:nth-child(7) {
+            animation-delay: .6s;
+        }
+
+.atlas-demo-note {
+    font-size: 11px !important;
+    color: #94a3b8 !important;
+    margin: 12px 0 0;
+    text-align: right;
+}
+
+@keyframes atlasShowcaseFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes atlasBarGrow {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@media (max-width: 850px) {
+    .atlas-product-showcase {
+        grid-template-columns: 1fr;
+        padding: 55px 5px;
+        gap: 35px;
+    }
+
+    .atlas-showcase-visual {
+        animation: none;
+    }
+
+    .atlas-window-body {
+        padding: 16px;
+    }
+
+    .atlas-mini-stats strong {
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .atlas-showcase-visual,
+    .atlas-fake-chart div {
+        animation: none;
+    }
+}
+
+
+/* ATLAS SOFT - WMS EKRAN TANITIMI */
+
+.atlas-wms-preview {
+    padding-top: 75px;
+    padding-bottom: 35px;
+}
+
+.atlas-preview-layout {
+    display: grid;
+    grid-template-columns: 310px minmax(0, 1fr);
+    gap: 25px;
+    align-items: stretch;
+}
+
+.atlas-preview-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.atlas-preview-tab {
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #dce6f2;
+    border-radius: 13px;
+    padding: 23px 20px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+    .atlas-preview-tab strong {
+        display: block;
+        font-size: 17px;
+        color: #172b4d;
+        margin-bottom: 9px;
+    }
+
+    .atlas-preview-tab span {
+        display: block;
+        font-size: 13px;
+        line-height: 1.7;
+        color: #64748b;
+    }
+
+    .atlas-preview-tab:hover {
+        transform: translateX(5px);
+        border-color: #2685ed;
+    }
+
+    .atlas-preview-tab.active {
+        background: #eaf3ff;
+        border-color: #2685ed;
+        box-shadow: 0 7px 20px rgba(38,133,237,.10);
+    }
+
+.atlas-preview-screen {
+    min-width: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    border: 1px solid #dce6f2;
+    box-shadow: 0 20px 45px rgba(7,28,57,.10);
+}
+
+.atlas-preview-topbar {
+    background: #071c39;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+    .atlas-preview-topbar span {
+        width: 10px;
+        height: 10px;
+        background: #f87171;
+        border-radius: 50%;
+    }
+
+        .atlas-preview-topbar span:nth-child(2) {
+            background: #fbbf24;
+        }
+
+        .atlas-preview-topbar span:nth-child(3) {
+            background: #34d399;
+        }
+
+    .atlas-preview-topbar strong {
+        color: white;
+        font-size: 13px;
+        margin-left: auto;
+    }
+
+.atlas-preview-image-area {
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #f8fbff;
+}
+
+    .atlas-preview-image-area img {
+        display: block;
+        max-width: 100%;
+        max-height: 520px;
+        object-fit: contain;
+        border-radius: 8px;
+        animation: atlasImageFade .4s ease;
+    }
+
+        .atlas-preview-image-area img[hidden] {
+            display: none;
+        }
+
+.atlas-preview-placeholder {
+    text-align: center;
+    padding: 30px;
+}
+
+.atlas-placeholder-icon {
+    font-size: 65px;
+    color: #2685ed;
+    margin-bottom: 15px;
+}
+
+.atlas-preview-placeholder h3 {
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.atlas-preview-placeholder p {
+    color: #64748b;
+    max-width: 350px;
+    line-height: 1.8;
+}
+
+@keyframes atlasImageFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .atlas-preview-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .atlas-preview-image-area {
+        min-height: 270px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .atlas-preview-image-area img {
+        animation: none;
+    }
+}
+
+
+/* ATLAS WMS - ÜST BÖLÜM RENK DÜZELTMESİ */
+
+.atlas-hero,
+.atlas-hero h1,
+.atlas-hero h2 {
+    color: #ffffff !important;
+}
+
+    .atlas-hero p {
+        color: #e2edff !important;
+    }
+
+    .atlas-hero .atlas-btn {
+        color: #ffffff !important;
+        text-decoration: none;
+    }
+
+    .atlas-hero .atlas-btn-outline {
+        border: 1px solid #ffffff;
+        background: rgba(255,255,255,0.08);
+    }
+
+    .atlas-hero .atlas-btn:hover {
+        background: #2685ed;
+        color: #ffffff !important;
+    }
+
+
+/* ATLAS SOFT - MENU DUZENLEMESI */
+
+.atlas-navbar .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.atlas-navbar .nav-link {
+    white-space: nowrap;
+    font-size: 14px;
+    padding: 10px 8px;
+}
+
+.atlas-navbar .navbar-brand {
+    flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+    .atlas-navbar .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+/* URUN SAYFALARI HERO DUZENLEMESI */
+
+.atlas-wms-page .atlas-hero,
+.atlas-ai-page .atlas-hero {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 85px 55px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+    .atlas-wms-page .atlas-hero h1,
+    .atlas-ai-page .atlas-hero h1 {
+        font-size: clamp(38px, 5vw, 64px);
+        line-height: 1.2;
+    }
+
+    .atlas-wms-page .atlas-hero p,
+    .atlas-ai-page .atlas-hero p {
+        max-width: 750px;
+        margin: 20px auto 30px;
+    }
+
+@media (max-width: 768px) {
+    .atlas-wms-page .atlas-hero,
+    .atlas-ai-page .atlas-hero {
+        padding: 65px 22px;
+    }
+}
+
+/* ATLAS BUSINESS - HERO UYUMU */
+
+.atlas-business-page .atlas-hero {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 85px 35px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+    .atlas-business-page .atlas-hero h1,
+    .atlas-business-page .atlas-hero h2 {
+        color: #fff;
+    }
+
+    .atlas-business-page .atlas-hero p {
+        max-width: 750px;
+        margin: 20px auto;
+        color: #e2edff;
+    }
+
+    .atlas-business-page .atlas-hero .atlas-btn {
+        color: #fff;
+        text-decoration: none;
+    }
+
+@media (max-width: 768px) {
+    .atlas-business-page .atlas-hero {
+        padding: 60px 20px;
+    }
+}
+
+/* ATLAS SOFT - TUM URUN SAYFALARI */
+
+.atlas-wms-page,
+.atlas-ai-page,
+.atlas-business-page {
+    color: #172b4d;
+}
+
+    /* Bolumler */
+
+    .atlas-wms-page .atlas-section,
+    .atlas-ai-page .atlas-section,
+    .atlas-business-page .atlas-section {
+        padding: 75px 0;
+    }
+
+    .atlas-wms-page .atlas-heading,
+    .atlas-ai-page .atlas-heading,
+    .atlas-business-page .atlas-heading {
+        font-size: clamp(28px, 3vw, 38px);
+        font-weight: 800;
+        color: #102b50;
+        margin-bottom: 15px;
+    }
+
+    .atlas-wms-page .atlas-subtitle,
+    .atlas-ai-page .atlas-subtitle,
+    .atlas-business-page .atlas-subtitle {
+        color: #64748b;
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 35px;
+    }
+
+    /* Uc sutunlu kart sistemi */
+
+    .atlas-wms-page .atlas-grid,
+    .atlas-ai-page .atlas-grid,
+    .atlas-business-page .atlas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    /* Kart tasarimi */
+
+    .atlas-wms-page .atlas-card,
+    .atlas-ai-page .atlas-card,
+    .atlas-business-page .atlas-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 8px 25px rgba(7, 28, 57, 0.05);
+        transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+        .atlas-wms-page .atlas-card:hover,
+        .atlas-ai-page .atlas-card:hover,
+        .atlas-business-page .atlas-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(7, 28, 57, 0.12);
+        }
+
+        .atlas-wms-page .atlas-card h3,
+        .atlas-ai-page .atlas-card h3,
+        .atlas-business-page .atlas-card h3 {
+            font-size: 22px;
+            font-weight: 750;
+            color: #102b50;
+            margin: 12px 0;
+        }
+
+        .atlas-wms-page .atlas-card p,
+        .atlas-ai-page .atlas-card p,
+        .atlas-business-page .atlas-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #64748b;
+        }
+
+        .atlas-wms-page .atlas-card .atlas-label,
+        .atlas-ai-page .atlas-card .atlas-label,
+        .atlas-business-page .atlas-card .atlas-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 750;
+            letter-spacing: 1px;
+            color: #2685ed;
+        }
+
+    /* Iletisim alani */
+
+    .atlas-wms-page .atlas-contact,
+    .atlas-ai-page .atlas-contact,
+    .atlas-business-page .atlas-contact {
+        background: linear-gradient(135deg, #103f7d, #071c39);
+        color: white;
+        border-radius: 18px;
+        padding: 65px 35px;
+        text-align: center;
+        margin-top: 45px;
+    }
+
+        .atlas-wms-page .atlas-contact h2,
+        .atlas-ai-page .atlas-contact h2,
+        .atlas-business-page .atlas-contact h2 {
+            color: white;
+        }
+
+        .atlas-wms-page .atlas-contact p,
+        .atlas-ai-page .atlas-contact p,
+        .atlas-business-page .atlas-contact p {
+            color: #dbeafe;
+        }
+
+/* Tablet */
+
+@media (max-width: 991px) {
+    .atlas-wms-page .atlas-grid,
+    .atlas-ai-page .atlas-grid,
+    .atlas-business-page .atlas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Telefon */
+
+@media (max-width: 640px) {
+    .atlas-wms-page .atlas-grid,
+    .atlas-ai-page .atlas-grid,
+    .atlas-business-page .atlas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .atlas-wms-page .atlas-section,
+    .atlas-ai-page .atlas-section,
+    .atlas-business-page .atlas-section {
+        padding: 45px 0;
+    }
+
+    .atlas-wms-page .atlas-card,
+    .atlas-ai-page .atlas-card,
+    .atlas-business-page .atlas-card {
+        padding: 23px;
+    }
+}
+
+
+/* ATLAS SOFT - DEMO TALEP FORMU */
+
+.atlas-demo-page {
+    padding: 55px 0 90px;
+}
+
+.atlas-demo-intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+.atlas-demo-eyebrow {
+    display: inline-block;
+    color: #2685ed;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.atlas-demo-intro h1 {
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 800;
+    color: #102b50;
+    margin-bottom: 18px;
+}
+
+.atlas-demo-intro p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #64748b;
+}
+
+.atlas-demo-form-card {
+    max-width: 850px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 18px 50px rgba(7,28,57,.08);
+}
+
+    .atlas-demo-form-card h2 {
+        font-size: 26px;
+        font-weight: 800;
+        color: #102b50;
+        margin-bottom: 30px;
+    }
+
+.atlas-demo-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.atlas-demo-full {
+    grid-column: 1 / -1;
+}
+
+.atlas-demo-form-card label {
+    display: block;
+    font-weight: 650;
+    margin-bottom: 9px;
+    color: #334155;
+}
+
+.atlas-demo-form-card .form-control,
+.atlas-demo-form-card .form-select {
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    padding: 13px 15px;
+}
+
+    .atlas-demo-form-card .form-control:focus,
+    .atlas-demo-form-card .form-select:focus {
+        border-color: #2685ed;
+        box-shadow: 0 0 0 3px rgba(38,133,237,.12);
+    }
+
+.atlas-demo-privacy {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #64748b;
+    margin: 25px 0;
+}
+
+.atlas-demo-submit {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #14529b, #2685ed);
+    color: white;
+    font-weight: 750;
+    font-size: 16px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+    .atlas-demo-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(38,133,237,.25);
+    }
+
+.atlas-demo-honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+@media (max-width: 640px) {
+    .atlas-demo-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .atlas-demo-form-card {
+        padding: 25px 20px;
+    }
+}
+
+
+/* ATLAS SOFT - YASAL SAYFALAR */
+
+.atlas-legal-page {
+    padding: 65px 0 90px;
+    background: #f5f7fb;
+    min-height: 75vh;
+}
+
+.atlas-legal-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 48px;
+    box-shadow: 0 15px 45px rgba(15, 23, 42, .07);
+}
+
+.atlas-legal-tag {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.atlas-legal-card h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 18px;
+}
+
+.atlas-legal-intro {
+    font-size: 17px;
+    color: #64748b;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.atlas-legal-card h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #172554;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+.atlas-legal-card p {
+    color: #475569;
+    line-height: 1.9;
+}
+
+.atlas-legal-card a {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .atlas-legal-page {
+        padding: 25px 12px 50px;
+    }
+
+    .atlas-legal-card {
+        padding: 25px 20px;
+    }
+
+        .atlas-legal-card h1 {
+            font-size: 27px;
+        }
+}
+
+
+/* ATLAS SOFT — PREMIUM ANA SAYFA VE MOBİL MENÜ */
+.atlas-navbar .navbar-toggler {
+    border: 1px solid #cbd5e1;
+    border-radius: 11px;
+    padding: 10px 13px;
+    box-shadow: none;
+}
+
+    .atlas-navbar .navbar-toggler:focus-visible {
+        outline: 3px solid #2685ed;
+        outline-offset: 2px;
+    }
+/* Bootstrap navbar-expand-xl: menü 1200px altında açılır */
+@media (max-width:1199.98px) {
+    .atlas-navbar .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        width: 100%;
+    }
+
+    .atlas-navbar .navbar-collapse {
+        padding: 16px 0 8px;
+    }
+
+    .atlas-navbar .nav-link {
+        padding: 12px 14px !important;
+        border-radius: 9px;
+    }
+
+        .atlas-navbar .nav-link:hover {
+            background: #eef5ff;
+        }
+
+    .atlas-navbar .atlas-demo-button {
+        display: block;
+        text-align: center;
+        margin: 10px 0 0;
+    }
+}
+
+.atlas-home .atlas-hero {
+    background: radial-gradient(ellipse at 80% 0%,rgba(51,143,255,.35),transparent 46%),linear-gradient(120deg,#06152e,#0b3165 55%,#0e59a2);
+    border: 1px solid rgba(123,188,255,.28);
+    border-radius: 26px;
+    box-shadow: 0 25px 65px rgba(7,28,57,.19);
+    padding: 100px 35px 92px;
+}
+
+    .atlas-home .atlas-hero h1 {
+        font-size: clamp(58px,9vw,100px);
+        line-height: 1.05;
+        letter-spacing: .07em;
+        text-shadow: 0 10px 36px rgba(0,0,0,.22);
+    }
+
+    .atlas-home .atlas-hero h2 {
+        font-size: clamp(24px,3.2vw,40px);
+        font-weight: 750;
+        margin-top: 15px;
+    }
+
+    .atlas-home .atlas-hero .atlas-label {
+        background: rgba(255,255,255,.13);
+        border: 1px solid rgba(255,255,255,.28);
+        color: #dceeff;
+        letter-spacing: .12em;
+    }
+
+    .atlas-home .atlas-hero p {
+        font-size: clamp(16px,1.6vw,19px);
+        line-height: 1.85;
+    }
+
+    .atlas-home .atlas-hero .atlas-btn {
+        border: 1px solid transparent;
+        box-shadow: 0 12px 30px rgba(0,0,0,.16);
+    }
+
+    .atlas-home .atlas-hero .atlas-btn-outline {
+        border-color: rgba(255,255,255,.7);
+    }
+
+.atlas-home .atlas-section {
+    padding-top: 85px;
+}
+
+.atlas-home .atlas-heading {
+    font-size: clamp(29px,3.5vw,41px);
+    color: #0a2548;
+    letter-spacing: -.03em;
+}
+
+.atlas-home .atlas-subtitle {
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.atlas-home .atlas-card {
+    border-radius: 19px;
+    border: 1px solid #dfe9f6;
+    box-shadow: 0 12px 38px rgba(10,37,72,.065);
+    position: relative;
+}
+
+    .atlas-home .atlas-card h3 {
+        color: #0b2a52;
+    }
+
+    .atlas-home .atlas-card .atlas-label {
+        border: 1px solid #d5e9ff;
+    }
+
+.atlas-home .atlas-product-showcase {
+    background: linear-gradient(135deg,#f6faff,#edf5ff);
+    border: 1px solid #e1ebf8;
+    border-radius: 24px;
+    margin-top: 50px;
+    padding: 65px 35px;
+}
+
+.atlas-home .atlas-software-window {
+    transform: perspective(900px) rotateY(-3deg);
+    box-shadow: 0 28px 70px rgba(7,28,57,.18);
+}
+
+.atlas-home .atlas-contact {
+    background: radial-gradient(circle at 80% 15%,rgba(56,151,255,.24),transparent 40%),linear-gradient(125deg,#071c39,#14529b);
+    color: white;
+    padding: 75px 30px;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 22px 50px rgba(7,28,57,.17);
+}
+
+    .atlas-home .atlas-contact h2 {
+        color: #fff;
+    }
+
+    .atlas-home .atlas-contact p {
+        color: #dbeafe;
+        max-width: 670px;
+        margin: 15px auto 24px;
+        line-height: 1.8;
+    }
+
+    .atlas-home .atlas-contact .atlas-btn {
+        background: #fff;
+        color: #0d4584;
+    }
+
+        .atlas-home .atlas-contact .atlas-btn:hover {
+            background: #e8f3ff;
+            color: #0d4584;
+        }
+
+@media(max-width:850px) {
+    .atlas-home .atlas-hero {
+        padding: 65px 20px 60px;
+        border-radius: 18px;
+    }
+
+    .atlas-home .atlas-product-showcase {
+        padding: 40px 20px;
+        gap: 25px;
+    }
+
+    .atlas-home .atlas-software-window {
+        transform: none;
+    }
+
+    .atlas-home .atlas-section {
+        padding-top: 60px;
+    }
+
+    .atlas-home .atlas-contact {
+        padding: 55px 20px;
+    }
+}
+
+@media(max-width:430px) {
+    .atlas-home .atlas-hero h1 {
+        font-size: 52px;
+    }
+
+    .atlas-home .atlas-hero .atlas-btn {
+        display: block;
+        margin: 12px 0;
+    }
+
+    .atlas-home .atlas-mini-stats {
+        gap: 5px;
+    }
+
+        .atlas-home .atlas-mini-stats div {
+            padding: 10px 5px;
+        }
+}
+
+
+/* ATLAS SOFT - PREMIUM DARK THEME */
+
+html {
+    background: #07111f;
+}
+
+body {
+    background: radial-gradient(ellipse at 15% 15%, rgba(28, 103, 205, .22), transparent 40%), radial-gradient(ellipse at 90% 55%, rgba(30, 130, 230, .13), transparent 45%), linear-gradient(135deg, #07111f, #0c1c33 55%, #071526);
+    background-attachment: fixed;
+    color: #e8f1ff;
+}
+
+/* UST MENU */
+.atlas-navbar {
+    background: rgba(7, 20, 39, .94) !important;
+    border-bottom: 1px solid rgba(105, 165, 255, .18) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .22);
+}
+
+    .atlas-navbar .atlas-brand {
+        color: #fff !important;
+    }
+
+    .atlas-navbar .atlas-brand-sub {
+        color: #9db7d8 !important;
+    }
+
+    .atlas-navbar .nav-link {
+        color: #dce9fc !important;
+    }
+
+        .atlas-navbar .nav-link:hover {
+            color: #55aaff !important;
+        }
+
+    .atlas-navbar .navbar-toggler {
+        border: 1px solid #7295c1;
+        background: rgba(255,255,255,.07);
+    }
+
+    .atlas-navbar .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+/* ANA SAYFA */
+.atlas-home {
+    color: #e8f1ff;
+}
+
+    .atlas-home .atlas-hero {
+        background: radial-gradient(circle at 85% 15%, rgba(58, 150, 255, .28), transparent 40%), linear-gradient(120deg, #07152e, #123d76, #08172d);
+        border: 1px solid rgba(120, 180, 255, .24);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, .35);
+    }
+
+    /* BOLUM BASLIKLARI */
+    .atlas-home .atlas-heading,
+    .atlas-home .atlas-showcase-content h2 {
+        color: #f4f8ff;
+    }
+
+    .atlas-home .atlas-subtitle,
+    .atlas-home .atlas-showcase-content p {
+        color: #b5c8e1;
+    }
+
+    /* URUN KARTLARI */
+    .atlas-home .atlas-card {
+        background: linear-gradient(145deg, rgba(23, 47, 81, .96), rgba(11, 28, 53, .97));
+        border: 1px solid rgba(116, 169, 238, .19);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, .22);
+    }
+
+        .atlas-home .atlas-card:hover {
+            border-color: #368df2;
+            box-shadow: 0 22px 50px rgba(19, 103, 218, .22);
+        }
+
+        .atlas-home .atlas-card h3 {
+            color: #f1f7ff;
+        }
+
+        .atlas-home .atlas-card p,
+        .atlas-home .atlas-card li {
+            color: #c0d0e5;
+        }
+
+    /* FIYATLANDIRMA */
+    .atlas-home .atlas-price {
+        color: #69b4ff;
+    }
+
+        .atlas-home .atlas-price small {
+            color: #b5c8e1;
+        }
+
+    /* YAZILIM VITRINI */
+    .atlas-home .atlas-software-window {
+        border: 1px solid rgba(111, 170, 255, .25);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, .35);
+    }
+
+    /* DEMO VE ILETISIM ALANI */
+    .atlas-home .atlas-contact {
+        background: linear-gradient(135deg, #102f5d, #07182f);
+        border: 1px solid rgba(90, 160, 255, .3);
+        box-shadow: 0 20px 55px rgba(0, 0, 0, .22);
+    }
+
+        .atlas-home .atlas-contact h2 {
+            color: #fff;
+        }
+
+        .atlas-home .atlas-contact p {
+            color: #d0e1f7;
+        }
+
+/* URUN SAYFALARI */
+.atlas-wms-page,
+.atlas-ai-page,
+.atlas-business-page {
+    color: #e8f1ff;
+}
+
+    .atlas-wms-page .atlas-heading,
+    .atlas-ai-page .atlas-heading,
+    .atlas-business-page .atlas-heading {
+        color: #f4f8ff;
+    }
+
+    .atlas-wms-page .atlas-subtitle,
+    .atlas-ai-page .atlas-subtitle,
+    .atlas-business-page .atlas-subtitle {
+        color: #b5c8e1;
+    }
+
+    .atlas-wms-page .atlas-card,
+    .atlas-ai-page .atlas-card,
+    .atlas-business-page .atlas-card {
+        background: #122844;
+        border-color: rgba(116, 169, 238, .2);
+    }
+
+        .atlas-wms-page .atlas-card h3,
+        .atlas-ai-page .atlas-card h3,
+        .atlas-business-page .atlas-card h3 {
+            color: #f1f7ff;
+        }
+
+        .atlas-wms-page .atlas-card p,
+        .atlas-ai-page .atlas-card p,
+        .atlas-business-page .atlas-card p {
+            color: #c0d0e5;
+        }
+
+/* MOBIL MENU */
+@media (max-width: 1199.98px) {
+    .atlas-navbar .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding: 15px 0;
+    }
+
+    .atlas-navbar .nav-link {
+        padding: 12px 15px !important;
+    }
+
+    .atlas-navbar .atlas-demo-button {
+        margin: 12px 15px;
+    }
+}
+
+/* TELEFON */
+@media (max-width: 640px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .atlas-home .atlas-hero {
+        padding: 55px 20px;
+    }
+
+    .atlas-home .atlas-card {
+        padding: 24px;
+    }
+}
+
+/* ATLAS SOFT - BEYAZ ARKA PLANI KALDIR */
+
+/* Sitenin genel arka planı */
+html,
+body,
+body.atlas-dark {
+    background: #091525 !important;
+    color: #eaf2ff;
+    min-height: 100%;
+}
+
+/* Lacivert ve antrasit ışık geçişleri */
+body {
+    background-image: radial-gradient( circle at 15% 20%, rgba(36, 112, 218, 0.22), transparent 40% ), radial-gradient( circle at 85% 65%, rgba(22, 88, 170, 0.18), transparent 45% ), linear-gradient( 135deg, #08111e 0%, #10243d 50%, #071321 100% ) !important;
+    background-attachment: fixed !important;
+}
+
+/* Ana içerik alanı */
+.atlas-main,
+.atlas-home,
+.atlas-section,
+main {
+    background-color: transparent !important;
+}
+
+/* Ana sayfanın boşlukları */
+.atlas-home {
+    color: #eaf2ff !important;
+}
+
+    /* Başlıklar */
+    .atlas-home .atlas-heading,
+    .atlas-home .atlas-showcase-content h2 {
+        color: #ffffff !important;
+    }
+
+    /* Açıklamalar */
+    .atlas-home .atlas-subtitle,
+    .atlas-home .atlas-showcase-content p {
+        color: #b9cce5 !important;
+    }
+
+    /* Kartların arka planı */
+    .atlas-home .atlas-card {
+        background: linear-gradient( 145deg, #172c49, #0d2038 ) !important;
+        border: 1px solid rgba(105, 166, 255, .2);
+        color: #eaf2ff;
+    }
+
+        /* Kart başlıkları */
+        .atlas-home .atlas-card h3 {
+            color: #ffffff !important;
+        }
+
+        /* Kart açıklamaları */
+        .atlas-home .atlas-card p,
+        .atlas-home .atlas-card li {
+            color: #c2d3e9 !important;
+        }
+
+/* Telefonlarda arka plan */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll !important;
+    }
+}
+
+
+/* ATLAS SOFT - FIYATLANDIRMA BUTON HIZALAMA */
+
+.atlas-home #fiyatlar .atlas-grid {
+    align-items: stretch;
+}
+
+.atlas-home #fiyatlar .atlas-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .atlas-home #fiyatlar .atlas-card .atlas-btn {
+        margin-top: auto;
+        align-self: flex-start;
+    }
+
+    .atlas-home #fiyatlar .atlas-card ul {
+        margin-bottom: 25px;
+    }
+/* ATLAS SOFT - 5 PAKETLI FIYATLANDIRMA VE YUKARI OK */
+.atlas-home .atlas-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.atlas-home .atlas-pricing-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+}
+
+    .atlas-home .atlas-pricing-card .atlas-label {
+        align-self: flex-start;
+    }
+
+    .atlas-home .atlas-pricing-card ul {
+        margin-bottom: 24px;
+    }
+
+    .atlas-home .atlas-pricing-card .atlas-btn {
+        margin-top: auto;
+        align-self: stretch;
+        text-align: center;
+    }
+
+    .atlas-home .atlas-pricing-card .atlas-price {
+        font-size: clamp(23px, 2.2vw, 32px);
+        overflow-wrap: anywhere;
+    }
+
+.atlas-home .atlas-billing-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 12px;
+    padding: 6px;
+    border: 1px solid rgba(116,169,238,.3);
+    background: rgba(10,30,55,.85);
+    border-radius: 14px;
+}
+
+.atlas-home .atlas-billing-option {
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: transparent;
+    color: #d8e7ff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .atlas-home .atlas-billing-option.active {
+        background: #2685ed;
+        color: #fff;
+    }
+
+    .atlas-home .atlas-billing-option span {
+        font-size: 12px;
+        margin-left: 4px;
+    }
+
+    .atlas-home .atlas-billing-option:focus-visible,
+    .atlas-back-to-top:focus-visible {
+        outline: 3px solid #8bc4ff;
+        outline-offset: 3px;
+    }
+
+.atlas-home .atlas-billing-description,
+.atlas-home .atlas-pricing-disclaimer {
+    color: #b8cbe4;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.atlas-home .atlas-billing-description {
+    margin-bottom: 25px;
+}
+
+.atlas-home .atlas-pricing-disclaimer {
+    margin: 24px auto 0;
+    max-width: 850px;
+}
+
+.atlas-back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1100;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 15px;
+    background: linear-gradient(135deg,#2685ed,#14529b);
+    color: #fff;
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 12px 28px rgba(0,0,0,.32);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+
+    .atlas-back-to-top.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .atlas-back-to-top:hover {
+        background: #369cff;
+    }
+
+@media (max-width: 1050px) {
+    .atlas-home .atlas-pricing-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .atlas-home .atlas-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .atlas-back-to-top {
+        right: 15px;
+        bottom: 15px;
+        width: 46px;
+        height: 46px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .atlas-back-to-top {
+        transition: none;
+    }
+}
+
+/* ATLAS SOFT - BELIRGIN UST MENU */
+
+.atlas-navbar .navbar-nav .nav-link {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    font-weight: 650 !important;
+    transition: color .2s ease, background .2s ease;
+}
+
+    /* Fare ile üzerine gelince */
+    .atlas-navbar .navbar-nav .nav-link:hover,
+    .atlas-navbar .navbar-nav .nav-link:focus {
+        color: #49a5ff !important;
+    }
+
+    /* Aktif sayfa */
+    .atlas-navbar .navbar-nav .nav-link.active,
+    .atlas-navbar .navbar-nav .nav-link[aria-current="page"] {
+        color: #49a5ff !important;
+        font-weight: 800 !important;
+    }
+
+/* Demo butonu */
+.atlas-navbar .atlas-demo-button {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Telefon menüsü */
+@media (max-width: 1199.98px) {
+    .atlas-navbar .navbar-nav .nav-link {
+        color: #ffffff !important;
+        opacity: 1 !important;
+    }
+}
+
+
+/* ATLAS SOFT - AKTIF SAYFA VURGUSU */
+
+.atlas-navbar .navbar-nav .nav-link.active,
+.atlas-navbar .navbar-nav .nav-link[aria-current="page"] {
+    color: #ffffff !important;
+    background: rgba(38, 133, 237, .24);
+    border-bottom: 3px solid #49a5ff;
+    border-radius: 8px 8px 3px 3px;
+    font-weight: 800 !important;
+}
+
+.atlas-navbar .navbar-nav .nav-link:not(.active) {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.atlas-navbar .navbar-nav .nav-link:hover {
+    background: rgba(38, 133, 237, .15);
+    color: #8dcbff !important;
+}
+
+
+/* ATLAS SOFT - URUN SAYFALARI BUTON DUZELTMESI */
+
+.atlas-wms-page .atlas-hero a,
+.atlas-ai-page .atlas-hero a,
+.atlas-business-page .atlas-hero a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 25px !important;
+    margin: 8px 6px !important;
+    border-radius: 10px !important;
+    background: #2685ed !important;
+    border: 1px solid #2685ed !important;
+    color: #ffffff !important;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none !important;
+    transition: all .25s ease;
+}
+
+    /* Ikinci buton: seffaf, beyaz cerceveli */
+    .atlas-wms-page .atlas-hero a:nth-of-type(2),
+    .atlas-ai-page .atlas-hero a:nth-of-type(2),
+    .atlas-business-page .atlas-hero a:nth-of-type(2) {
+        background: rgba(255,255,255,.08) !important;
+        border: 1px solid rgba(255,255,255,.7) !important;
+    }
+
+    /* Fare uzerine gelince */
+    .atlas-wms-page .atlas-hero a:hover,
+    .atlas-ai-page .atlas-hero a:hover,
+    .atlas-business-page .atlas-hero a:hover {
+        background: #1168c9 !important;
+        border-color: #1168c9 !important;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0,0,0,.22);
+    }
+
+/* Telefonlarda butonlar duzgun siralansin */
+@media (max-width: 640px) {
+    .atlas-wms-page .atlas-hero a,
+    .atlas-ai-page .atlas-hero a,
+    .atlas-business-page .atlas-hero a {
+        width: min(100%, 280px);
+        margin: 7px auto !important;
+    }
+}
+
